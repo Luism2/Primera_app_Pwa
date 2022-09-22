@@ -1,26 +1,30 @@
-function sumarUno(numero ){
+function sumarUno(numero){
 
     var promesa = new Promise(function(resolve, reject){
 
+        console.log(numero);
+
+        if (numero >= 7) {
+
+            reject('el numero es muy alto');
+        }
         setTimeout(function(){
 
-            resolve(numero + 1 );
-        
-         }, 800);
+            resolve(numero + 1);
+
+        },800);  
     });
-
-
- return promesa;
-
+    return promesa;
 }
-sumarUno(5).then(nuevoNumero => {
+
+    sumarUno( 5 )
+    .then(sumarUno)
+    .then(sumarUno)
+    .then(sumarUno)
+    .then(nuevoNumero => {
     console.log(nuevoNumero);
-    return sumarUno(nuevoNumero);
-})
-.then(nuevoNumero =>{
-    console.log(nuevoNumero);
-    return sumarUno(nuevoNumero);
-})
-.then(nuevoNumero => {
-    console.log(nuevoNumero);
-});
+    })
+    .catch(error =>{
+        console.log('Error de continuidad');
+        console.log(error);
+    });
