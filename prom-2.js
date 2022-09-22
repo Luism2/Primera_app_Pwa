@@ -14,7 +14,13 @@ function sumarUno(numero ){
 
 }
 sumarUno(5).then(nuevoNumero => {
-    sumarUno(nuevoNumero).then(nuevoNumero2 =>{
-        console.log(nuevoNumero2);
-    });
+    console.log(nuevoNumero);
+    return sumarUno(nuevoNumero);
+})
+.then(nuevoNumero =>{
+    console.log(nuevoNumero);
+    return sumarUno(nuevoNumero);
+})
+.then(nuevoNumero => {
+    console.log(nuevoNumero);
 });
