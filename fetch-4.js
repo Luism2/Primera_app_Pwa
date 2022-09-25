@@ -2,7 +2,7 @@
 
 let img = document.querySelector('img');
 
-fetch('PWA/utt:png')
+fetch('utt.png')
 .then(resp => resp.blob())
 .then (imagen => {
 
