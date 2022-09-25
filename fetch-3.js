@@ -18,5 +18,4 @@ fetch('https://reqres.in/api/users', {
 .catch(console.error);
  console.log('Error en la app');
  console.log(error);
-
 });
